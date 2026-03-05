@@ -1,16 +1,126 @@
-# React + Vite
+# 🌦️ Weather Prediction App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive **Weather Forecasting Web App** built using **React + Vite + Tailwind CSS**.
+The application allows users to search for any city and view the **current weather conditions and forecast** using the OpenWeather API.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+* 🔍 Search weather by city name
+* 🌡️ Displays temperature, humidity, and weather conditions
+* 📅 Weather forecast for upcoming days
+* ⚡ Fast and lightweight React + Vite setup
+* 🎨 Responsive UI with modern design
+* 🌍 Uses OpenWeatherMap API for real-time data
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Frontend:** React.js
+* **Build Tool:** Vite
+* **Styling:** Tailwind CSS
+* **API:** OpenWeatherMap API
+
+---
+
+## 📂 Project Structure
+
+```
+weather-ui
+│
+├── public
+│   └── vite.svg
+│
+├── src
+│   ├── components
+│   │   ├── Weather.jsx
+│   │   ├── Forecast.jsx
+│   │   └── SearchBar.jsx
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   ├── index.css
+│
+├── index.html
+├── package.json
+├── tailwind.config.js
+└── vite.config.js
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```
+git clone https://github.com/sahanajkhan/wheather_predication.git
+```
+
+Go to the project folder:
+
+```
+cd wheather_predication
+```
+
+Install dependencies:
+
+```
+npm install
+```
+
+Run the development server:
+
+```
+npm run dev
+```
+
+Now open:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🔑 API Setup
+
+1. Get a free API key from
+   https://openweathermap.org/api
+
+2. Replace the API key in your code:
+
+```
+const API_KEY = "YOUR_API_KEY";
+```
+
+---
+
+## 📸 Screenshots
+
+(Add screenshots of your project here)
+
+---
+
+## 🌍 Future Improvements
+
+* 7-day weather forecast
+* Location-based weather detection
+* Weather icons and animations
+* Dark mode support
+* Deployment with Vercel
+
+---
+
+## 👩‍💻 Author
+
+**Shahanaj Khan**
+
+* GitHub: https://github.com/sahanajkhan
+
+---
+
+⭐ If you like this project, consider giving it a star!
+
