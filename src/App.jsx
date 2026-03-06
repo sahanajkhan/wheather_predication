@@ -1,5 +1,5 @@
 import Weather from "./components/wheather";
-
+import "./App.css";
 function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-700 flex items-center justify-center">

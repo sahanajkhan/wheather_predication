@@ -1,23 +1,23 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import SearchBar from "./SearchBar";
 import Forecast from "./Forecast";
 
 const Weather = () => {
 
-  const [weather, setWeather] = useState(null);
+  const [weather,setWeather] = useState(null);
 
   const apiKey = "6e25a20457968d753cf514360799493c";
 
-  const fetchWeather = async (city) => {
+  const fetchWeather = async(city)=>{
 
-    try {
+    try{
 
       const weatherUrl =
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
       const forecastUrl =
-        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
 
       const weatherRes = await axios.get(weatherUrl);
       const forecastRes = await axios.get(forecastUrl);
@@ -27,59 +27,61 @@ const Weather = () => {
         forecast: forecastRes.data.list.slice(0,5)
       });
 
-    } catch (error) {
+    }
 
+    catch(error){
       alert("City not found");
-
     }
 
   };
 
-  return (
+  return(
 
-    <div className="bg-white/20 backdrop-blur-lg p-8 rounded-3xl shadow-xl w-[420px] text-white">
+    <div className="weather-container">
 
-      <h1 className="text-3xl font-bold text-center mb-6">
-        Weather Forecast
-      </h1>
+      <h1>Weather App</h1>
 
-      <SearchBar fetchWeather={fetchWeather} />
+      <SearchBar fetchWeather={fetchWeather}/>
 
       {weather && (
 
-        <div className="mt-6 text-center">
+        <div className="weather-info">
 
-          <h2 className="text-2xl font-semibold">
+          <h2>
             {weather.current.name}
           </h2>
 
-          <p className="text-6xl font-bold mt-2">
+          <h1 className="temp">
             {weather.current.main.temp}°C
-          </p>
+          </h1>
 
-          <p className="capitalize">
+          <p>
             {weather.current.weather[0].description}
           </p>
 
-          <div className="flex justify-around mt-6">
+          <div className="details">
 
             <div>
-              <p className="text-lg">Humidity</p>
-              <p className="font-bold">
+
+              <p>Humidity</p>
+              <h3>
                 {weather.current.main.humidity}%
-              </p>
+              </h3>
+
             </div>
 
             <div>
-              <p className="text-lg">Wind</p>
-              <p className="font-bold">
+
+              <p>Wind</p>
+              <h3>
                 {weather.current.wind.speed} km/h
-              </p>
+              </h3>
+
             </div>
 
           </div>
 
-          <Forecast data={weather.forecast} />
+          <Forecast data={weather.forecast}/>
 
         </div>
 
@@ -88,6 +90,7 @@ const Weather = () => {
     </div>
 
   );
+
 };
 
 export default Weather;
