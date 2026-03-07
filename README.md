@@ -122,5 +122,5 @@ const API_KEY = "YOUR_API_KEY";
 
 ---
 
-⭐ If you like this project, consider giving it a star!
+
 
